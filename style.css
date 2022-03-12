@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    /* width: 8.25in;
+    height: 11.75in;
+    margin: 0;
+    padding: 0; */
+  }
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+}
+
+html, body {
+  width: 210mm;
+  height: 297mm;
+  /* width: 8.25in;
+  height: 11.75in; */
+  margin: 0;
+  padding: 0;
+}
+
+.cv-container {
+  @apply flex h-full;
+}
+
+.col {
+  @apply h-full p-7;
+}
+
+.left {
+  @apply relative pl-12 pr-12;
+  width: 45%;
+}
+
+.right {
+  /* @apply pl-0 pt-28; */
+  @apply pl-0 pt-8;
+}
+
+.avatar-container {
+  @apply relative z-20 mb-5 flex align-middle justify-center;
+
+  position: relative;
+  z-index: 20;
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  background-image: url(/avatar.png);
+  /* height: 17.5rem; */
+  /* width: 15rem; */
+  height: 20rem;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: -1.5rem -1.5rem; /* zoom trick */
+  background-size: 20rem auto;
+  /* background-size: 17rem auto; */
+}
+
+.avatar-container > img {
+  /* @apply object-cover; */
+  /* height: 15rem;
+  object-position: top; */
+}
+
+.layer-border {
+  @apply absolute z-10 border-2 border-solid border-gray-500 pointer-events-none select-none;
+  inset: 1.5rem;
+  top: 7.25rem;
+}
+
+.right {
+  @apply flex-1;
+}
+
+.section:not(:last-child) {
+  @apply mb-8;
+}
+
+.section-title {
+  @apply font-display font-semibold text-2xl mb-3;
+}
+
+.section-content {
+  @apply font-body text-base;
+}
+
+.bio .section-title {
+  @apply text-4xl mb-2;
+}
+
+.bio .section-content {
+  @apply uppercase text-xl;
+}
+
+.contact .section-content {
+  @apply space-y-2;
+}
+
+.contact .contact-item {
+  @apply flex;
+}
+
+.contact .contact-item > svg {
+  @apply mr-3;
+}
+
+.achivement .headline {
+  @apply flex justify-between items-center;
+}
+
+.achivement strong {
+  @apply font-semibold;
+}
+
+.achivement .headline span:first-child {
+  @apply text-lg;
+}
+
+.company-name {
+  @apply font-semibold text-lg;
+}
+
+.work-experience .company-name {
+  @apply mb-1;
+}
+
+.achivement .list-disc > li {
+  @apply ml-4;
+}
