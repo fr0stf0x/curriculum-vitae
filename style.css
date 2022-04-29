@@ -135,6 +135,7 @@ html, body {
   @apply mb-1;
 }
 
-.achivement .list-disc > li {
+.achivement .list-disc {
   @apply ml-4;
+  /* @apply list-inside; */
 }
