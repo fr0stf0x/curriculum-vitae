@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Noah'],
+        display: ['Radio Canada'],
         body: ['Source Sans Pro']
       }
     },
