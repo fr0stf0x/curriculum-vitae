@@ -56,7 +56,8 @@ html, body {
   display: flex;
   justify-content: center;
   vertical-align: middle;
-  background-image: url(/avatar.png);
+  /* background-image: url(/avatar.png); */
+  background-image: url("https://cdn.jsdelivr.net/gh/fr0stf0x/curriculum-vitae/avatar.png");
   /* height: 17.5rem; */
   /* width: 15rem; */
   height: 20rem;
