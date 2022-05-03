@@ -1,3 +1,3 @@
 # curriculum-vitae
 
-This is source code for [my CV](cv.pdf)
+This is source code for [my CV](https://curriculum-vitae-olive.vercel.app/)
