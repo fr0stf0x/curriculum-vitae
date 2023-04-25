@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         display: ['Radio Canada'],
         body: ['Source Sans Pro']
+      },
+      listStyleType: {
+        square: 'square'
       }
     },
   },
