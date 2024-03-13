@@ -14,13 +14,16 @@
     margin: 0;
     padding: 0; */
   }
-  html, body {
+  html,
+  body {
     width: 210mm;
     height: 297mm;
   }
 }
 
-html, body, .cv-container {
+html,
+body,
+.cv-container {
   /* width: 210mm; */
   height: 297mm;
   /* width: 8.25in;
@@ -133,6 +136,10 @@ html, body, .cv-container {
 }
 
 .company-name {
+  @apply font-semibold text-xl;
+}
+
+.role {
   @apply font-semibold text-lg;
 }
 
@@ -173,3 +180,4 @@ html, body, .cv-container {
     display: none;
   }
 }
+
