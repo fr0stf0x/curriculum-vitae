@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @page {
   size: A4;
   margin: 0;
@@ -33,29 +29,29 @@ body,
 }
 
 .cv-container {
-  @apply flex flex-wrap divide-x-4;
+  --at-apply: flex flex-wrap divide-x-4;
 }
 
 .cv-page {
-  @apply relative flex h-full w-[210mm];
+  --at-apply: relative flex h-full w-[210mm];
 }
 
 .col {
-  @apply h-full p-7;
+  --at-apply: h-full p-7;
 }
 
 .left {
-  @apply relative pl-12 pr-12;
+  --at-apply: relative pl-12 pr-12;
   width: 45%;
 }
 
 .right {
-  /* @apply pl-0 pt-28; */
-  @apply pl-0 pt-10;
+  /* --at-apply: pl-0 pt-28; */
+  --at-apply: pl-0 pt-10;
 }
 
 .avatar-container {
-  @apply relative z-20 mb-5 flex align-middle justify-center;
+  --at-apply: relative z-20 mb-5 flex align-middle justify-center;
 
   position: relative;
   z-index: 20;
@@ -76,108 +72,108 @@ body,
 }
 
 .avatar-container > img {
-  /* @apply object-cover; */
+  /* --at-apply: object-cover; */
   /* height: 15rem;
   object-position: top; */
 }
 
 .layer-border {
-  @apply absolute z-10 border-2 border-solid border-gray-500 pointer-events-none select-none;
+  --at-apply: absolute z-10 border-2 border-solid border-gray-500
+    pointer-events-none select-none;
   inset: 1.5rem;
   top: 7.25rem;
 }
 
 .right {
-  @apply flex-1;
+  --at-apply: flex-1;
 }
 
 .section:not(:last-child) {
-  @apply mb-8;
+  --at-apply: mb-8;
 }
 
 .section-title {
-  @apply font-display font-semibold text-2xl mb-3;
+  --at-apply: font-display font-semibold text-2xl mb-3;
 }
 
 .section-content {
-  @apply font-body text-base;
+  --at-apply: font-body text-base;
 }
 
 .bio .section-title {
-  @apply text-3xl mb-2;
+  --at-apply: text-3xl mb-2;
 }
 
 .bio .section-content {
-  @apply uppercase text-xl;
+  --at-apply: uppercase text-xl;
 }
 
 .contact .section-content {
-  @apply space-y-2;
+  --at-apply: space-y-2;
 }
 
 .contact .contact-item {
-  @apply flex;
+  --at-apply: flex;
 }
 
 .contact .contact-item > svg {
-  @apply mr-3;
+  --at-apply: mr-3;
 }
 
 .achivement .headline {
-  @apply flex justify-between items-center;
+  --at-apply: flex justify-between items-center;
 }
 
 .achivement strong {
-  @apply font-semibold;
+  --at-apply: font-semibold;
 }
 
 .achivement .headline span:first-child {
-  @apply text-lg;
+  --at-apply: text-lg;
 }
 
 .company-name {
-  @apply font-semibold text-xl;
+  --at-apply: font-semibold text-xl;
 }
 
 .role {
-  @apply font-semibold text-lg;
+  --at-apply: font-semibold text-lg;
 }
 
 .work-experience .company-name {
-  @apply mb-1;
+  --at-apply: mb-1;
 }
 
 .achivement .list-disc,
 .achivement .list-square {
-  @apply ml-4;
-  /* @apply list-inside; */
+  --at-apply: ml-4;
+  /* --at-apply: list-inside; */
 }
 
 .timeline .section-content {
-  @apply space-y-4 border-l border-neutral-300;
+  --at-apply: space-y-4 border-l border-neutral-300;
 }
 .timeline .time-point {
-  @apply flex items-center;
+  --at-apply: flex items-center;
 }
 .timeline .time-point > div:first-child {
-  @apply -ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500;
+  --at-apply: -ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300;
 }
 
 .timeline .timeline-content {
-  @apply ml-4;
+  --at-apply: ml-4;
 }
 
 .cv-page .page-number {
-  @apply absolute -bottom-5 left-1/2 -translate-x-1/2;
+  --at-apply: absolute -bottom-5 left-1/2 -translate-x-1/2;
 }
 
 @media print {
   .cv-container {
-    @apply divide-x-0;
+    --at-apply: divide-x-0;
   }
 
   .cv-page .page-number {
     display: none;
   }
 }
-
