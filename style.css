@@ -170,7 +170,7 @@ body,
 
 @media print {
   .cv-container {
-    @apply: divide-x-0;
+    @apply: divide-x-0 divide-y-0 gap-0;
   }
 
   .cv-page .page-number {
