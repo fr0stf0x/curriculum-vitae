@@ -29,29 +29,29 @@ body,
 }
 
 .cv-container {
-  --at-apply: flex flex-wrap divide-x-4;
+  @apply: flex flex-wrap divide-x-4 divide-y-4 gap-y-7;
 }
 
 .cv-page {
-  --at-apply: relative flex h-full w-[210mm];
+  @apply: relative flex h-full w-[210mm];
 }
 
 .col {
-  --at-apply: h-full p-7;
+  @apply: h-full p-7;
 }
 
 .left {
-  --at-apply: relative pl-12 pr-12;
+  @apply: relative pl-12 pr-12;
   width: 45%;
 }
 
 .right {
-  /* --at-apply: pl-0 pt-28; */
-  --at-apply: pl-0 pt-10;
+  /* @apply: pl-0 pt-28; */
+  @apply: pl-0 pt-10;
 }
 
 .avatar-container {
-  --at-apply: relative z-20 mb-5 flex align-middle justify-center;
+  @apply: relative z-20 mb-5 flex align-middle justify-center;
 
   position: relative;
   z-index: 20;
@@ -72,105 +72,105 @@ body,
 }
 
 .avatar-container > img {
-  /* --at-apply: object-cover; */
+  /* @apply: object-cover; */
   /* height: 15rem;
   object-position: top; */
 }
 
 .layer-border {
-  --at-apply: absolute z-10 border-2 border-solid border-gray-500
+  @apply: absolute z-10 border-2 border-solid border-gray-500
     pointer-events-none select-none;
   inset: 1.5rem;
   top: 7.25rem;
 }
 
 .right {
-  --at-apply: flex-1;
+  @apply: flex-1;
 }
 
 .section:not(:last-child) {
-  --at-apply: mb-8;
+  @apply: mb-8;
 }
 
 .section-title {
-  --at-apply: font-display font-semibold text-2xl mb-3;
+  @apply: font-display font-semibold text-2xl mb-3;
 }
 
 .section-content {
-  --at-apply: font-body text-base;
+  @apply: font-body text-base;
 }
 
 .bio .section-title {
-  --at-apply: text-3xl mb-2;
+  @apply: text-3xl mb-2;
 }
 
 .bio .section-content {
-  --at-apply: uppercase text-xl;
+  @apply: uppercase text-xl;
 }
 
 .contact .section-content {
-  --at-apply: space-y-2;
+  @apply: space-y-2;
 }
 
 .contact .contact-item {
-  --at-apply: flex;
+  @apply: flex;
 }
 
 .contact .contact-item > svg {
-  --at-apply: mr-3;
+  @apply: mr-3;
 }
 
 .achivement .headline {
-  --at-apply: flex justify-between items-center;
+  @apply: flex justify-between items-center;
 }
 
 .achivement strong {
-  --at-apply: font-semibold;
+  @apply: font-semibold;
 }
 
 .achivement .headline span:first-child {
-  --at-apply: text-lg;
+  @apply: text-lg;
 }
 
 .company-name {
-  --at-apply: font-semibold text-xl;
+  @apply: font-semibold text-xl;
 }
 
 .role {
-  --at-apply: font-semibold text-lg;
+  @apply: font-semibold text-lg;
 }
 
 .work-experience .company-name {
-  --at-apply: mb-1;
+  @apply: mb-1;
 }
 
 .achivement .list-disc,
 .achivement .list-square {
-  --at-apply: ml-4;
-  /* --at-apply: list-inside; */
+  @apply: ml-4;
+  /* @apply: list-inside; */
 }
 
 .timeline .section-content {
-  --at-apply: space-y-4 border-l border-neutral-300;
+  @apply: space-y-4 border-l border-neutral-300;
 }
 .timeline .time-point {
-  --at-apply: flex items-center;
+  @apply: flex items-center;
 }
 .timeline .time-point > div:first-child {
-  --at-apply: -ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300;
+  @apply: -ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-gray-500;
 }
 
 .timeline .timeline-content {
-  --at-apply: ml-4;
+  @apply: ml-4;
 }
 
 .cv-page .page-number {
-  --at-apply: absolute -bottom-5 left-1/2 -translate-x-1/2;
+  @apply: absolute -bottom-5 left-1/2 -translate-x-1/2;
 }
 
 @media print {
   .cv-container {
-    --at-apply: divide-x-0;
+    @apply: divide-x-0;
   }
 
   .cv-page .page-number {
