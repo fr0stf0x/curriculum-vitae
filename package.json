@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@unocss/reset": "0.58.5",
+    "prettier": "^3.6.2",
     "unocss": "0.58.5",
     "vite": "^5.2.11"
   }

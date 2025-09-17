@@ -3,51 +3,80 @@
   margin: 0;
 }
 
+@page :first {
+  margin-top: 0;
+}
+
+@page {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 @media print {
-  body {
-    /* width: 8.25in;
-    height: 11.75in;
-    margin: 0;
-    padding: 0; */
-  }
   html,
   body {
     width: 210mm;
     height: 297mm;
+  }
+
+  .cv-page > *:not(last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+@media print {
+  .cv-container {
+    @apply: divide-x-0 divide-y-0;
+  }
+
+  .section:not(:last-child) {
+    @apply: !mb-1;
   }
 }
 
 html,
 body,
 .cv-container {
-  /* width: 210mm; */
-  height: 297mm;
-  /* width: 8.25in;
-  height: 11.75in; */
+  /* height: 297mm; */
   margin: 0;
   padding: 0;
 }
 
 .cv-container {
-  @apply: flex flex-wrap divide-x-0 2xl:divide-x-4 divide-y-4 2xl:divide-y-0 gap-y-7;
+  @apply: flex flex-wrap divide-x-0 2xl:divide-x-4 divide-y-4 2xl:divide-y-0 p-7;
 }
 
 .cv-page {
-  @apply: relative flex h-full w-[210mm];
+  @apply: relative h-full gap-y-5 gap-x-10;
+}
+
+@media screen {
+  .cv-page {
+    /* @apply: flex justify-center w-full flex-wrap; */
+    @apply: grid justify-center w-full;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(min(calc(100vw - 3.5rem), calc(210mm - 3.5rem)), 0.7fr)
+    );
+  }
+
+  .cv-page > * {
+    /* width: calc(210mm - 3.5rem); */
+    /* flex: 0.3 1 calc(210mm - 3.5rem); */
+  }
 }
 
 .col {
-  @apply: h-full p-7;
+  @apply: p-7;
 }
 
 .left {
-  @apply: relative pl-12 pr-12;
-  width: 45%;
+  @apply: relative px-5;
+  flex: 0 0 295px;
 }
 
 .right {
-  /* @apply: pl-0 pt-28; */
-  @apply: pl-0 pt-10;
+  flex: 1 1 360px;
 }
 
 .avatar-container {
@@ -55,46 +84,30 @@ body,
 
   position: relative;
   z-index: 20;
-  margin-bottom: 1.25rem;
   display: flex;
   justify-content: center;
   vertical-align: middle;
-  /* background-image: url(/avatar.png); */
-  /* background-image: url("https://cdn.jsdelivr.net/gh/fr0stf0x/curriculum-vitae/avatar.png"); */
   background-image: url("/avatar-compressed.png");
-  /* height: 17.5rem; */
-  /* width: 15rem; */
-  height: 20rem;
+  height: 15rem;
   width: 100%;
   background-repeat: no-repeat;
-  background-position: -1.5rem -1.5rem; /* zoom trick */
-  background-size: 20rem auto;
-  /* background-size: 17rem auto; */
-}
-
-.avatar-container > img {
-  /* @apply: object-cover; */
-  /* height: 15rem;
-  object-position: top; */
+  background-position: -1rem -1.5rem; /* zoom trick */
+  background-size: 18rem auto;
 }
 
 .layer-border {
-  @apply: absolute z-10 border-2 border-solid border-gray-500
+  @apply: absolute z-10 border-2 border-solid border-gray-400
     pointer-events-none select-none;
-  inset: 1.5rem;
-  top: 7.25rem;
-}
-
-.right {
-  @apply: flex-1;
+  inset: 0rem;
+  top: 3rem;
 }
 
 .section:not(:last-child) {
-  @apply: mb-8;
+  @apply: mb-5;
 }
 
 .section-title {
-  @apply: font-display font-semibold text-2xl mb-3;
+  @apply: font-display font-semibold text-2xl mb-1;
 }
 
 .section-content {
@@ -102,11 +115,11 @@ body,
 }
 
 .bio .section-title {
-  @apply: text-3xl mb-2;
+  @apply: text-2xl;
 }
 
 .bio .section-content {
-  @apply: uppercase text-xl;
+  @apply: text-xl;
 }
 
 .contact .section-content {
@@ -118,10 +131,26 @@ body,
 }
 
 .contact .contact-item > svg {
-  @apply: mr-3;
+  @apply: flex-[0_1_1.5rem] mr-3;
 }
 
-.achivement .headline {
+.contact .contact-item span {
+  @apply: flex-[1_1_auto];
+}
+
+.education .achivement {
+  @apply: p-0 mb-1;
+}
+
+.education .company-name {
+  @apply: text-lg;
+}
+
+.education .role {
+  @apply: text-base mb-0;
+}
+
+.headline {
   @apply: flex justify-between items-center;
 }
 
@@ -129,20 +158,16 @@ body,
   @apply: font-semibold;
 }
 
-.achivement .headline span:first-child {
+.achivement .headline {
   @apply: text-lg;
 }
 
 .company-name {
-  @apply: font-semibold text-xl;
+  @apply: font-semibold text-xl text-blue-700;
 }
 
 .role {
-  @apply: font-semibold text-lg;
-}
-
-.work-experience .company-name {
-  @apply: mb-1;
+  @apply: font-semibold text-lg mb-1;
 }
 
 .achivement .list-disc,
@@ -163,18 +188,4 @@ body,
 
 .timeline .timeline-content {
   @apply: ml-4;
-}
-
-.cv-page .page-number {
-  @apply: absolute -bottom-5 left-1/2 -translate-x-1/2;
-}
-
-@media print {
-  .cv-container {
-    @apply: divide-x-0 divide-y-0 gap-0;
-  }
-
-  .cv-page .page-number {
-    display: none;
-  }
 }
