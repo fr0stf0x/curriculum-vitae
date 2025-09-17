@@ -47,6 +47,22 @@ body,
 }
 
 .cv-page {
+  /* https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/ */
+  --grid-layout-gap: 1.5rem;
+  --grid-column-count: 2; /* This gets overridden by an inline style. */
+  --grid-item--min-width: min(
+    calc(210mm - 3.5rem),
+    calc(100vw - 3.5rem)
+  ); /* This gets overridden by an inline style. */
+
+  /**
+   * Calculated values.
+   */
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc(
+    (100% - var(--total-gap-width)) / var(--grid-column-count)
+  );
   @apply: relative h-full gap-y-5 gap-x-10;
 }
 
@@ -54,10 +70,15 @@ body,
   .cv-page {
     /* @apply: flex justify-center w-full flex-wrap; */
     @apply: grid justify-center w-full;
+    /* grid-template-columns: repeat( */
+    /*   auto-fill, */
+    /*   minmax(min(calc(100vw - 3.5rem), calc(210mm - 3.5rem)), 0.7fr) */
+    /* ); */
     grid-template-columns: repeat(
       auto-fill,
-      minmax(min(calc(100vw - 3.5rem), calc(210mm - 3.5rem)), 0.7fr)
+      minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
     );
+    grid-gap: var(--grid-layout-gap);
   }
 
   .cv-page > * {
